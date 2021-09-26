@@ -3,6 +3,7 @@ from tokens import Token, TokenType
 WHITESPACE = ' \n\t'
 DIGITS = '0123456789'
 
+
 class Lexer:
     def __init__(self, text):
         self.text = iter(text)
@@ -60,4 +61,3 @@ class Lexer:
             num_str += '0'
 
         return Token(TokenType.NUMBER, float(num_str))
-

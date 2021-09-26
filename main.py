@@ -5,11 +5,14 @@
 
 # Press the green button in the gutter to run the script.
 from lexer import Lexer
+from parser_ import Parser
 
 if __name__ == '__main__':
     while True:
         text = input("calculate > ")
         lexer = Lexer(text)
         tokens = lexer.generate_tokens()
-        print(list(tokens))
+        parser = Parser(tokens)
+        tree = parser.parse()
+        print(tree)
 
